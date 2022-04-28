@@ -37,6 +37,17 @@ public class Product {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
 	private List<Comment> comments;
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@ManyToOne
+	private User user;
+
 	public Product() {
 		super();
 	}

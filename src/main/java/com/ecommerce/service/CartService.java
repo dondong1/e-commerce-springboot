@@ -10,7 +10,7 @@ public interface CartService {
 	
 	void deleteCart(long id);
 	
-	List<Cart> findCartsForUser(long idUser);
+	Cart findCartForUser(long idUser);
 	
 	Cart findCartById(long id);
 	

@@ -31,9 +31,9 @@ public class CartController {
 	void deleteCart(@PathVariable long id) {
 		cartService.deleteCart(id);
 	}
-	@GetMapping("/findCartsForUser/{idUser}")
-	List<Cart> findCartsForUser(@PathVariable long idUser) {
-		return cartService.findCartsForUser(idUser);
+	@GetMapping("/findCartForUser/{idUser}")
+	Cart findCartsForUser(@PathVariable long idUser) {
+		return cartService.findCartForUser(idUser);
 	}
 	@GetMapping("/findCartById/{id}")
 	Cart findCartById(@PathVariable long id) {

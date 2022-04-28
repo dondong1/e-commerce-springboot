@@ -12,7 +12,27 @@
 
 # Database Design:
 
-![picture alt](/1.png "Database")
+![picture alt](/0.png "Basic Entity classes diagram")
+
+- One to One mapping between User class and Cart class
+- One to Many mapping between Cart class and Product class
+- Each product can be categorized by the sub class of Product class
+
+- User can Search the Products by ID, or by product Name or by product Category
+- User can Search the Products by ID, or by product Name or by product Category
+- User can remove a specific product and remove all products from the cart
+
+- User can remove a specific product and remove all products from the cart
+- If the user updated the quantity as zero the product has to be removed from the cart.
+- User can view the products any time. The application has to display the total amount to be paid by the user
+
+# Hibernate and Spring module:
+
+- The life cycle of entity classes completely managed by Hibernate framework
+- Named query to be used
+- Spring Boot to be used to bootstrap the application
+- Spring data JPA to be used
+- Spring Transaction management to be used
 
 # Spring Boot Architecture:
 
@@ -26,10 +46,8 @@
 
 - GET http://localhost:7090/api/admin/findAllUsers : 200 OK
 
-
-
 ::: warning
-*This is security risk! With the url api, one can obtain sensity list of all customers!!! This is the case where I will add JWT to stop this from happening.*
+_This is security risk! With the url api, one can obtain sensity list of all customers!!! This is the case where I will add JWT to stop this from happening._
 :::
 
 ![picture alt](/4.png "Add User")

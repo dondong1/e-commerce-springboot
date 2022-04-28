@@ -1,6 +1,5 @@
 package com.ecommerce.impl;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +36,9 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public List<Cart> findCartsForUser(long idUser) {
+	public Cart findCartForUser(long idUser) {
 		User user = userDao.findById(idUser).orElse(null);
-		return user.getCarts();
+		return user.getCart();
 	}
 
 	@Override
@@ -57,12 +56,12 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public Cart findByCartName(String name) {
-		Optional<Cart> carts = cartDao.findByName(name);
-		if (carts.isPresent()) {
-			Cart cart = carts.get();
-			return cart;
-		}
-		return null;
+		Optional<Cart> cart = cartDao.findByName(name);
+		if (cart.isPresent())
+			return cart.get();
+		else return null;
 	}
+
+
 
 }

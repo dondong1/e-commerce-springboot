@@ -38,15 +38,15 @@ public class User {
 	 private List<Category> categories;
 	 
 	 @JsonProperty(access = Access.AUTO)
-	 @OneToMany(cascade = CascadeType.MERGE, mappedBy = "user")
-	 private List<Cart> carts;
+	 @OneToOne
+	 private Cart cart;
 
 	public User() {
 		super();
 	}
 
 	public User(String username, String password, boolean admin, String email, String nameOnCard,
-			String cardNumber, int cvv, String address, List<Category> categories, List<Cart> carts) {
+			String cardNumber, int cvv, String address, List<Category> categories, Cart cart) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -57,7 +57,7 @@ public class User {
 		this.cvv = cvv;
 		this.address = address;
 		this.categories = categories;
-		this.carts = carts;
+		this.cart = cart;
 	}
 
 	public Long getId() {
@@ -142,12 +142,12 @@ public class User {
 	}
 	
 	
-	public List<Cart> getCarts() {
-		return carts;
+	public Cart getCart() {
+		return cart;
 	}
 
-	public void setCarts(List<Cart> carts) {
-		this.carts = carts;
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 
 	public void addCategoryToUser(Category category) {
@@ -159,16 +159,16 @@ public class User {
 	}
    
 	public void addCartToUser(Cart cart) {
-		if(getCarts()==null) {
-			this.carts = new ArrayList<>();	
+		if(getCart()==null) {
+			this.cart = new Cart();
 		}
-		getCarts().add(cart);
+		getCart().add(cart);
 		cart.setUser(this);
 	}
 	public void removeFromCart(Cart cart) {
-		if (getCarts()!=null) {
-			getCarts().remove(cart);
+		if (getCart()!=null) {
+			getCart().remove(cart);
 		}
 	}
-	 
+
 }

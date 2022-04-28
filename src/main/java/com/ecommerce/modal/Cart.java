@@ -1,16 +1,13 @@
 package com.ecommerce.modal;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import java.util.List;
+
 @Entity
-@Table(name = "carts")
+@Table(name = "cart")
 public class Cart {
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +22,12 @@ public class Cart {
 	private String pictureUrl;
     
 	@JsonBackReference(value = "user")
-	@ManyToOne
+	@OneToOne
     private User user;
+
+
+	@OneToMany(fetch = FetchType.LAZY)
+	private List<Product> product;
 
 	public Cart() {
 		super();
@@ -88,6 +89,11 @@ public class Cart {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
+
+
+	public void add(Cart cart) {
+	}
+
+	public void remove(Cart cart) {
+	}
 }
