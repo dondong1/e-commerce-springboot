@@ -6,18 +6,27 @@
 
 - Java JDK 17
 - Java Framework: Spring Boot 2.4.2
-- Dependencies:  Security, JPA, Web, Validation Api, MySQL connector, starter test, security test...
+- Dependencies: Security, JPA, Web, Validation Api, MySQL connector, starter test, security test...
 - Database: MySql
 - IDE: Intelij
 
 # Database Design:
-
 
 ![picture alt](/1.png "Database")
 
 # Spring Boot Architecture:
 
 - Controller -> Service -> Repository -> (data) -> Service -> Controller -> Web/Web Client.
+
+# Checking All API Endpoints Using Postman:
+
+- POST http:localhost:7090/api/addUser : 200 OK
+
+![picture alt](/3.png "Add User")
+
+- GET http://localhost:7090/api/admin/findAllUsers : 200 OK
+
+![picture alt](/4.png "Add User")
 
 # JWT implementation (JSON WEB TOKEN) (To be implemented)
 
@@ -28,4 +37,3 @@
   with test case header as: {"mobile": 9164725749, "password": "testpassword"}
   will return payload user information and a user token as following:
   ![picture alt](/2.png "Database")
-
