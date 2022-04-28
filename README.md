@@ -26,7 +26,8 @@
 
 - GET http://localhost:7090/api/admin/findAllUsers : 200 OK
 
-(https://github.com/markdown-it/markdown-it-container)
+### [] (https://github.com/markdown-it/markdown-it-container)
+
 ::: warning
 _This is security risk! With the url api, one can obtain sensity list of all customers!!! This is the case where I will add JWT to stop this from happening._
 :::
