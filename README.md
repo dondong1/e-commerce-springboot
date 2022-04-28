@@ -50,7 +50,15 @@
 _This is security risk! With the url api, one can obtain sensity list of all customers!!! This is the case where I will add JWT to stop this from happening._
 :::
 
-![picture alt](/4.png "Add User")
+![picture alt](/4.png "Find ALL User")
+
+- POST http://localhost:7090/api/addProductToCategory/1 200 OK
+
+![picture alt](/5.png "Add Product To Category")
+
+- PUT http://localhost:7090/api/editProduct/2 200 OK
+
+![picture alt](/6.png "Add Product To Category")
 
 # JWT implementation (JSON WEB TOKEN) (To be implemented)
 
