@@ -16,7 +16,7 @@
 
 # Spring Boot Architecture:
 
-- Controller -> Service -> Repository -> (data) -> Service -> Controller -> Web/Web Client.
+- Controller -> Service -> DAO (Repository) -> (data) -> Service -> Controller -> Web/Web Client.
 
 # Checking All API Endpoints Using Postman:
 
@@ -25,6 +25,10 @@
 ![picture alt](/3.png "Add User")
 
 - GET http://localhost:7090/api/admin/findAllUsers : 200 OK
+
+::: warning
+_This is security risk! With the url api, one can obtain sensity list of all customers!!! This is the case where I will add JWT to stop this from happening._
+:::
 
 ![picture alt](/4.png "Add User")
 
